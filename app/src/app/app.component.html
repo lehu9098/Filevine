@@ -1,33 +1,9 @@
-<style>
-
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-</style>
-
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <span>Welcome</span>
-</div>
-
+<app-search
+  [placeholder]="placeholder"
+  (inputTextEvent)="inputTextEvent($event)">
+</app-search>
 <div class="content" role="main">
-  <h3>Hello World</h3>
+  <h3 *ngIf="!inputData">Hello User</h3>
+  <h3 *ngIf="inputData && inputData.name">{{inputData.name}}</h3>
+  <h3 *ngIf="inputData && inputData.age">{{inputData.age}}</h3>
 </div>
