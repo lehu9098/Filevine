@@ -1,6 +1,9 @@
 <div class="toolbar" role="banner">
   <!--<span>{{placeholder}}</span>-->
-  <input type="text" [(ngModel)]="inputText" placeholder="Enter Name Here">
-  <input type="number" [(ngModel)]="inputAge" placeholder="Enter Age Here">
-  <button type="button" name="button" (click)="sendTextToParent()">Submit</button>
+  <label class="spacing" for="Name">Enter Name Here</label>
+  <input class="spacing" type="text" [(ngModel)]="inputText" placeholder="Enter Name Here" name="Name">
+  <label class="spacing" for="Age">Enter Age Here</label>
+  <input class="spacing" type="number" [(ngModel)]="inputAge" name="Age">
+  <button class="spacing" type="button" name="button" (click)="getData()">GetData</button>
+  <button class="spacing" type="button" name="button" (click)="sendTextToParent()">Submit</button>
 </div>

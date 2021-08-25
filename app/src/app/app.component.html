@@ -1,9 +1,19 @@
 <app-search
   [placeholder]="placeholder"
-  (inputTextEvent)="inputTextEvent($event)">
+  (inputTextEvent)="inputTextEvent($event)"
+  (apiData)="populateApiData($event)">
 </app-search>
 <div class="content" role="main">
   <h3 *ngIf="!inputData">Hello User</h3>
-  <h3 *ngIf="inputData && inputData.name">{{inputData.name}}</h3>
-  <h3 *ngIf="inputData && inputData.age">{{inputData.age}}</h3>
+  <h3 *ngIf="inputData && inputData.name">Name: {{inputData.name | uppercase}}</h3>
+  <h3 *ngIf="inputData && inputData.age">Age: {{inputData.age}}</h3>
+  <div [ngStyle]="currentStyles" *ngFor="let n of numbers"><!-- [ngClass]=class -->
+    <p>{{n}}</p>
+  </div>
+  <div *ngIf="data">
+    <p>{{data.id}}</p>
+    <p>{{data.title}}</p>
+    <p>{{data.body}}</p>
+    <p>{{data.userId}}</p>
+  </div>
 </div>
